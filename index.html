@@ -116,6 +116,21 @@ p.sec-sub{
   transition:background .2s,transform .15s,box-shadow .2s;
   box-shadow:0 4px 18px rgba(180,220,2,.35);
   letter-spacing:.01em;
+  position:relative;
+  overflow:hidden;
+}
+.btn::after{
+  content:'';
+  position:absolute;
+  top:-10%;left:-60%;
+  width:40%;height:120%;
+  background:linear-gradient(105deg,transparent 20%,rgba(255,255,255,.55) 50%,transparent 80%);
+  transform:skewX(-15deg);
+  animation:btnShimmer 2.4s ease-in-out infinite;
+}
+@keyframes btnShimmer{
+  0%{left:-60%}
+  60%,100%{left:130%}
 }
 .btn:hover{background:#9bc400;transform:translateY(-2px);box-shadow:0 8px 28px rgba(180,220,2,.45)}
 .btn-sm{padding:11px 26px;font-size:.9rem}
@@ -311,7 +326,8 @@ p.sec-sub{
   width:100%;
 }
 .chips-row{
-  display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;
+  display:flex;flex-wrap:wrap;gap:10px;
+  justify-content:flex-start;
   width:100%;
 }
 .hero-bottom-block .trust-row{
@@ -953,7 +969,6 @@ p.sec-sub{
   width:max-content;
   align-items:center;
   will-change:transform;
-  transform:translateX(0);
 }
 @keyframes logoScroll{
   0%  {transform:translateX(0)}
@@ -973,7 +988,7 @@ p.sec-sub{
   height:60px;
 }
 .logo-img{
-  height:36px;
+  height:48px;
   width:auto;
   max-width:none;
   object-fit:contain;
@@ -1363,7 +1378,7 @@ p.sec-sub{
    7. FINAL CTA
 ═══════════════════════════════ */
 .final-section{
-  background:linear-gradient(135deg,rgba(10,25,41,.85) 0%,rgba(10,58,110,.85) 100%),url('https://res.cloudinary.com/dl296lrkq/image/upload/v1777372729/Untitled_design_3_1_w8g9ra.png') center/cover no-repeat;
+  background:linear-gradient(135deg,rgba(10,25,41,.75) 0%,rgba(10,58,110,.75) 100%),url('https://res.cloudinary.com/dl296lrkq/image/upload/v1779396442/hero_vrogxy.jpg') center/cover no-repeat;
   padding:80px 24px;text-align:center;
   position:relative;overflow:hidden;
   content-visibility:auto;
@@ -1788,7 +1803,7 @@ footer p{
 
   <div class="hero-bottom-block">
     <h1 class="rv">
-      <span class="hero-line">كتوظّف فـ <em dir="ltr">المطاعم والفنادق</em></span>
+      <span class="hero-line">كتوظّف <em>فـ المطاعم والفنادق</em></span>
       <span class="hero-line">وكتضيع وقتك مع <em>CVs</em></span>
       <span class="hero-line">ما كيوصلوش حتى للمقابلة</span>
     </h1>
@@ -1813,10 +1828,10 @@ footer p{
       <a href="https://coincarriere.com/register?type=company" class="btn">جرّب المنصة الآن</a>
     </div>
 
-    <div class="trust-row rv" style="justify-content:flex-end;width:100%;">
-      <span class="ti"><b></b>بلا تعقيد</span>
-      <span class="ti"><b></b>ربح الوقت</span>
-      <span class="ti"><b></b>توظيف أكثر فعالية</span>
+    <div class="trust-row rv" style="justify-content:flex-start;width:100%;direction:rtl;gap:22px;">
+      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>بلا تعقيد</span>
+      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>ربح الوقت</span>
+      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>توظيف أكثر فعالية</span>
     </div>
   </div>
 </section>
@@ -1853,7 +1868,7 @@ footer p{
   <div class="hero-custom-content">
     <div class="hero-mob-top">
       <h1 class="hero-title">
-        <span class="hero-line">كتوظّفـ<em dir="ltr">فالمطاعم والفنادق</em></span>
+        <span class="hero-line">كتوظّف فـ<em dir="ltr">المطاعم والفنادق</em></span>
         <span class="hero-line">وكتضيع وقتك مع <em>CVs</em></span>
         <span class="hero-line">ما كيوصلوش حتى للمقابلة</span>
       </h1>
@@ -1899,31 +1914,45 @@ footer p{
   </div>
 </div>
 
+
+
+
+
 <!-- 2b. Partner logos -->
 <div class="logos-section">
-  <p class="logos-label rv">+457 مركز نداء وشركة توظيف يثقون في CoinCarrière</p>
+  <p class="logos-label rv">+457 مطعم وفندق يثقون في CoinCarrière</p>
   <div class="marquee-wrapper">
     <div class="marquee-track">
-
-      <!-- ── GROUP 1 (original) ── -->
       <div class="marquee-group" aria-hidden="false">
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217924/13_wqg1ir.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217920/2_slt18x.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217917/8_f82zsk.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217916/1_aj6ety.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217917/7_fekrzc.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217914/6_kawhn7.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217914/9_eddrpi.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217911/10_svvy3t.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217910/3_nh5gip.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217910/14_tvu62j.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217910/12_zk15g3.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217909/11_ar5kov.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217909/4_ydrwdj.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217908/5_dxfauy.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217907/15_wywlvv.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/3_pahwy3.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/2_ps9kxl.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/1_n7hvya.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/13_gs9g3u.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/12_x1na3v.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/5_qvp3q3.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/11_l3y88b.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/6_vnjedl.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/9_lg4yup.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/10_tokdzm.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/8_g3uzp3.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/7_zcwn8d.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/4_tmztal.png" alt="شعار" class="logo-img"/></div>
       </div>
-
+      <div class="marquee-group" aria-hidden="true">
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/3_pahwy3.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396049/2_ps9kxl.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/1_n7hvya.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/13_gs9g3u.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/12_x1na3v.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/5_qvp3q3.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/11_l3y88b.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/6_vnjedl.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396048/9_lg4yup.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/10_tokdzm.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/8_g3uzp3.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/7_zcwn8d.png" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779396047/4_tmztal.png" alt="شعار" class="logo-img"/></div>
+      </div>
     </div>
   </div>
 </div>
@@ -2850,60 +2879,57 @@ function resetContactForm() {
   window.addEventListener('scroll', updateBar, {passive:true});
   window.addEventListener('resize', updateBar, {passive:true});
 
-  // ── Logos Marquee — JS driven, waits for images ───────
+  // ── Logos Marquee — JS driven, infinite loop ───────
   (function(){
-    const section = document.querySelector('.logos-section');
-    const track   = document.querySelector('.marquee-track');
-    if (!section || !track) return;
+    const tracks = document.querySelectorAll('.marquee-track');
+    if(!tracks.length) return;
 
-    let pos = 0;
-    let raf = null;
-    let started = false;
-    const speed = 0.5; // px per frame
+    tracks.forEach(function(track){
+      const section = track.closest('.logos-section, .marquee-wrapper') || track.parentElement;
+      let pos = 0;
+      let raf = null;
+      let started = false;
+      const speed = 0.6;
 
-    function getHalfWidth(){
-      const groups = track.querySelectorAll('.marquee-group');
-      if(groups.length < 2) return track.scrollWidth / 2;
-      return groups[0].offsetWidth;
-    }
-
-    function step(){
-      const half = getHalfWidth();
-      if(half === 0){ raf = requestAnimationFrame(step); return; }
-      pos += speed;
-      if(pos >= half) pos = 0;
-      track.style.transform = 'translateX(-' + pos + 'px)';
-      raf = requestAnimationFrame(step);
-    }
-
-    function startMarquee(){
-      if(started) return;
-      started = true;
-      // wait for all images in track to load
-      const imgs = Array.from(track.querySelectorAll('img'));
-      const loaded = imgs.filter(i => i.complete && i.naturalWidth > 0).length;
-      if(loaded === imgs.length){
-        raf = requestAnimationFrame(step);
-      } else {
-        let count = 0;
-        imgs.forEach(img => {
-          if(img.complete && img.naturalWidth > 0){ count++; if(count===imgs.length) raf=requestAnimationFrame(step); return; }
-          img.addEventListener('load',  ()=>{ count++; if(count===imgs.length) raf=requestAnimationFrame(step); }, {once:true});
-          img.addEventListener('error', ()=>{ count++; if(count===imgs.length) raf=requestAnimationFrame(step); }, {once:true});
-        });
-        // fallback: start after 2s regardless
-        setTimeout(()=>{ if(!raf) raf=requestAnimationFrame(step); }, 2000);
+      function getHalfWidth(){
+        const groups = track.querySelectorAll('.marquee-group');
+        if(groups.length >= 2) return groups[0].offsetWidth;
+        return track.scrollWidth / 2;
       }
-    }
 
-    if('IntersectionObserver' in window){
-      const obs = new IntersectionObserver(entries=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ startMarquee(); obs.disconnect(); } });
-      },{threshold:0.15});
-      obs.observe(section);
-    } else {
-      startMarquee();
-    }
+      function step(){
+        const half = getHalfWidth();
+        if(half === 0){ raf = requestAnimationFrame(step); return; }
+        pos += speed;
+        if(pos >= half) pos = pos - half;
+        track.style.transform = 'translateX(-' + pos + 'px)';
+        raf = requestAnimationFrame(step);
+      }
+
+      function startMarquee(){
+        if(started) return;
+        started = true;
+        const imgs = Array.from(track.querySelectorAll('img'));
+        if(!imgs.length){ raf = requestAnimationFrame(step); return; }
+        let count = 0;
+        function onLoad(){ count++; if(count === imgs.length) raf = requestAnimationFrame(step); }
+        imgs.forEach(img => {
+          if(img.complete && img.naturalWidth > 0){ onLoad(); return; }
+          img.addEventListener('load',  onLoad, {once:true});
+          img.addEventListener('error', onLoad, {once:true});
+        });
+        setTimeout(()=>{ if(!raf) raf = requestAnimationFrame(step); }, 1500);
+      }
+
+      if('IntersectionObserver' in window){
+        const obs = new IntersectionObserver(entries=>{
+          entries.forEach(e=>{ if(e.isIntersecting){ startMarquee(); obs.disconnect(); } });
+        },{threshold:0.1});
+        obs.observe(track);
+      } else {
+        startMarquee();
+      }
+    });
   })();
 
   // ── Exit Intent ────────────────────────────────
@@ -2916,27 +2942,10 @@ function resetContactForm() {
     ov.style.display = 'flex';
   }
 
-  // Desktop: mouse leaves toward top of page
+  // Desktop only: mouse exits page toward top
   document.addEventListener('mouseleave', e => {
     if (e.clientY <= 5) showPopup();
   });
-
-  // Mobile: fast scroll-up = user trying to go back
-  let lastY = window.scrollY;
-  let fastUpStart = null;
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY;
-    if (y < lastY) {
-      if (fastUpStart === null) fastUpStart = lastY;
-      // إذا رجع فوق بـ 150px دفعة وحدة وهو فوق منتصف الصفحة
-      if (fastUpStart - y > 150 && y < document.body.scrollHeight * 0.5) {
-        showPopup();
-      }
-    } else {
-      fastUpStart = null;
-    }
-    lastY = y;
-  }, {passive: true});
 
   document.getElementById('close-popup').addEventListener('click', () => ov.style.display='none');
   ov.addEventListener('click', e => { if(e.target===ov) ov.style.display='none'; });
