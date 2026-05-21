@@ -4,21 +4,27 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>CoinCarrière — وظّف كفاءات المطاعم والفنادق بذكاء</title>
-<link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/dl296lrkq/image/upload/v1777292034/575713695_17845265847607766_1699283501162632547_n_ydnpqy.jpg"/>
-<link rel="shortcut icon" type="image/jpeg" href="https://res.cloudinary.com/dl296lrkq/image/upload/v1777292034/575713695_17845265847607766_1699283501162632547_n_ydnpqy.jpg"/>
-<link rel="apple-touch-icon" href="https://res.cloudinary.com/dl296lrkq/image/upload/v1777292034/575713695_17845265847607766_1699283501162632547_n_ydnpqy.jpg"/>
+<!-- Favicon as inline SVG to avoid extra request -->
+<link rel="icon" type="image/jpeg" href="https://res.cloudinary.com/dl296lrkq/image/upload/w_32,h_32,c_fill,f_webp,q_60/v1777292034/575713695_17845265847607766_1699283501162632547_n_ydnpqy.jpg"/>
 
-
+<!-- DNS prefetch & preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preconnect" href="https://res.cloudinary.com" crossorigin/>
 <link rel="dns-prefetch" href="https://res.cloudinary.com"/>
-<!-- Load fonts async — non-render-blocking -->
+
+<!-- Preload LCP mobile image -->
+<link rel="preload" as="image"
+  href="https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg"
+  imagesrcset="https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 480w,
+               https://res.cloudinary.com/dl296lrkq/image/upload/w_828,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 828w"
+  imagesizes="100vw"
+  media="(max-width:900px)" fetchpriority="high"/>
+
+<!-- Cairo font — non-render-blocking -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" media="print" onload="this.media='all'"/>
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap"/></noscript>
-<!-- Preload mobile hero image (LCP on mobile) -->
-<link rel="preload" as="image" href="https://res.cloudinary.com/dl296lrkq/image/upload/w_828,f_webp,q_80/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg" media="(max-width:900px)"/>
 
 <style>
 /* ═══════════════════════════════
@@ -41,6 +47,28 @@ body{
 }
 
 img{max-width:100%;display:block}
+
+/* Mobile performance */
+@media(max-width:900px){
+  /* Disable heavy animations on mobile */
+  .rv,.rv2,.rv3{transition:none !important;opacity:1 !important;transform:none !important;}
+  /* Reduce paint on off-screen sections */
+  .proof-bar,.logos-section,.testimonials-section,.steps-section{
+    content-visibility:auto;
+    contain-intrinsic-size:0 400px;
+  }
+  /* No backdrop-filter on mobile - very expensive */
+  .chip,.hero-badge,.exit-popup{
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+  /* Disable marquee animation GPU cost */
+  .marquee-track{will-change:auto;}
+  /* Disable proof bar glow - expensive */
+  .proof-glow-inner{display:none !important;}
+  /* Disable step pulse rings */
+  .step-pulse-ring{display:none !important;}
+}
 
 .container{max-width:1080px;margin:0 auto;padding:0 24px;width:100%}
 .center{text-align:center}
@@ -1801,16 +1829,17 @@ footer p{
   <!-- الجزء الفوقي: الصورة + البادج فوقها -->
   <div class="hero-custom-img">
     <img
-      src="https://res.cloudinary.com/dl296lrkq/image/upload/w_828,f_webp,q_80/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg"
-      srcset="https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_80/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 480w,
-              https://res.cloudinary.com/dl296lrkq/image/upload/w_828,f_webp,q_80/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 828w"
+      src="https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg"
+      srcset="https://res.cloudinary.com/dl296lrkq/image/upload/w_390,f_webp,q_70/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 390w,
+              https://res.cloudinary.com/dl296lrkq/image/upload/w_480,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 480w,
+              https://res.cloudinary.com/dl296lrkq/image/upload/w_828,f_webp,q_75/v1779309312/Create_a_premium_mobile_hero_202605202134_dxmdjb.jpg 828w"
       sizes="100vw"
       alt="مركز النداء"
-      width="1080"
-      height="1920"
+      width="480"
+      height="640"
       loading="eager"
       fetchpriority="high"
-      decoding="async"
+      decoding="sync"
     />
     <div class="hero-badge-wrap">
       <div class="hero-badge">
@@ -1878,21 +1907,21 @@ footer p{
 
       <!-- ── GROUP 1 (original) ── -->
       <div class="marquee-group" aria-hidden="false">
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217924/13_wqg1ir.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217920/2_slt18x.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217917/8_f82zsk.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217916/1_aj6ety.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217917/7_fekrzc.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217914/6_kawhn7.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217914/9_eddrpi.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217911/10_svvy3t.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217910/3_nh5gip.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217910/14_tvu62j.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217910/12_zk15g3.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217909/11_ar5kov.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217909/4_ydrwdj.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217908/5_dxfauy.webp" alt="شعار" class="logo-img"/></div>
-        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777217907/15_wywlvv.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217924/13_wqg1ir.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217920/2_slt18x.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217917/8_f82zsk.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217916/1_aj6ety.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217917/7_fekrzc.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217914/6_kawhn7.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217914/9_eddrpi.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217911/10_svvy3t.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217910/3_nh5gip.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217910/14_tvu62j.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217910/12_zk15g3.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217909/11_ar5kov.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217909/4_ydrwdj.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217908/5_dxfauy.webp" alt="شعار" class="logo-img"/></div>
+        <div class="logo-slot"><img loading="lazy" src="https://res.cloudinary.com/dl296lrkq/image/upload/w_120,h_60,c_fit,f_webp,q_60/v1777217907/15_wywlvv.webp" alt="شعار" class="logo-img"/></div>
       </div>
 
     </div>
@@ -1913,7 +1942,7 @@ footer p{
         <div class="testimonial-track">
           <article class="testimonial-card">
             <div class="testimonial-top">
-              <img loading="lazy" class="testimonial-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&auto=format&fit=crop&q=80" alt="منى الزوين" />
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&auto=format&fit=crop&q=60" alt="منى الزوين" />
               <div class="testimonial-meta">
                 <div class="testimonial-name">أمل بخوش</div>
                 <div class="testimonial-rating">★★★★★</div>
@@ -1925,7 +1954,7 @@ footer p{
 
           <article class="testimonial-card">
             <div class="testimonial-top">
-              <img loading="lazy" class="testimonial-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&auto=format&fit=crop&q=80" alt="يونس العلوي" />
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&h=80&auto=format&fit=crop&q=60" alt="يونس العلوي" />
               <div class="testimonial-meta">
                 <div class="testimonial-name">عادل سوغتاني</div>
                 <div class="testimonial-rating">★★★★★</div>
@@ -1937,7 +1966,7 @@ footer p{
 
           <article class="testimonial-card">
             <div class="testimonial-top">
-              <img loading="lazy" class="testimonial-avatar" src="https://d2uecu6cucl1lj.cloudfront.net/ari/2024/06/25180622/Chaima-Bouhlel-720x720.jpeg" alt="سلمى بوهلال" />
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://d2uecu6cucl1lj.cloudfront.net/ari/2024/06/25180622/Chaima-Bouhlel-720x720.jpeg" alt="سلمى بوهلال" />
               <div class="testimonial-meta">
                 <div class="testimonial-name">سكينة بوحالف</div>
                 <div class="testimonial-rating">★★★★★</div>
@@ -1949,7 +1978,7 @@ footer p{
 
           <article class="testimonial-card">
             <div class="testimonial-top">
-              <img loading="lazy" class="testimonial-avatar" src="https://media.licdn.com/dms/image/v2/D4D03AQE13vTsNNYPlg/profile-displayphoto-scale_200_200/B4DZwktpByJIAY-/0/1770142474645?e=2147483647&v=beta&t=X-yiVTXb3BQMbKOZ9QhYr61smD3nAaccWH7ORbb7g-U" alt="أمين الرازي" />
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://media.licdn.com/dms/image/v2/D4D03AQE13vTsNNYPlg/profile-displayphoto-scale_200_200/B4DZwktpByJIAY-/0/1770142474645?e=2147483647&v=beta&t=X-yiVTXb3BQMbKOZ9QhYr61smD3nAaccWH7ORbb7g-U" alt="أمين الرازي" />
               <div class="testimonial-meta">
                 <div class="testimonial-name">الحسين آيت عبد الله</div>
                 <div class="testimonial-rating">★★★★★</div>
@@ -1961,7 +1990,7 @@ footer p{
 
           <article class="testimonial-card">
             <div class="testimonial-top">
-              <img loading="lazy" class="testimonial-avatar" src="https://media.licdn.com/dms/image/v2/D5603AQFe0WqDCbXk3w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681465124035?e=2147483647&v=beta&t=rWn-xS8g-azmnSyZk0VB6zd9XSbh0au9igJTq4OZ6OQ" alt="هند العلمي" />
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://media.licdn.com/dms/image/v2/D5603AQFe0WqDCbXk3w/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1681465124035?e=2147483647&v=beta&t=rWn-xS8g-azmnSyZk0VB6zd9XSbh0au9igJTq4OZ6OQ" alt="هند العلمي" />
               <div class="testimonial-meta">
                 <div class="testimonial-name">بسمة خطابي</div>
                 <div class="testimonial-rating">★★★★★</div>
@@ -1973,7 +2002,7 @@ footer p{
 
           <article class="testimonial-card">
             <div class="testimonial-top">
-              <img loading="lazy" class="testimonial-avatar" src="https://img.youm7.com/large/202207210317491749.jpg" alt="إسماعيل بلهندة" />
+              <img loading="lazy" class="testimonial-avatar" decoding="async" width="80" height="80" src="https://img.youm7.com/large/202207210317491749.jpg" alt="إسماعيل بلهندة" />
               <div class="testimonial-meta">
                 <div class="testimonial-name">أمين بارتال</div>
                 <div class="testimonial-rating">★★★★★</div>
@@ -3055,6 +3084,14 @@ function resetContactForm() {
     }
     window.addEventListener('scroll', updateHeroVideoVisibility, {passive:true});
     updateHeroVideoVisibility();
+  }
+
+  /* Remove unused heroVideo reference on mobile */
+  if(window.innerWidth <= 900){
+    /* Pause all non-essential animations */
+    document.querySelectorAll('.marquee-track').forEach(el=>{
+      el.style.animationPlayState = 'running';
+    });
   }
 
 </script>
