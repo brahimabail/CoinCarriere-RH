@@ -105,6 +105,10 @@ p.sec-sub{
 }
 
 /* CTA Buttons */
+@keyframes btnGlowPulse{
+  0%,100%{box-shadow:0 4px 18px rgba(180,220,2,.35),0 0 0px rgba(180,220,2,0)}
+  50%{box-shadow:0 4px 28px rgba(180,220,2,.55),0 0 38px rgba(180,220,2,.38),0 0 70px rgba(180,220,2,.18)}
+}
 .btn{
   display:inline-block;
   background:#b4dc02;color:#000;
@@ -113,11 +117,11 @@ p.sec-sub{
   border:none;cursor:pointer;
   font-family:'Cairo',sans-serif;
   text-decoration:none;
-  transition:background .2s,transform .15s,box-shadow .2s;
-  box-shadow:0 4px 18px rgba(180,220,2,.35);
+  transition:background .2s,transform .15s;
   letter-spacing:.01em;
   position:relative;
   overflow:hidden;
+  animation:btnGlowPulse 2.6s ease-in-out infinite;
 }
 .btn::after{
   content:'';
@@ -132,7 +136,7 @@ p.sec-sub{
   0%{left:-60%}
   60%,100%{left:130%}
 }
-.btn:hover{background:#9bc400;transform:translateY(-2px);box-shadow:0 8px 28px rgba(180,220,2,.45)}
+.btn:hover{background:#9bc400;transform:translateY(-2px);animation-play-state:paused;box-shadow:0 8px 32px rgba(180,220,2,.65),0 0 50px rgba(180,220,2,.35)}
 .btn-sm{padding:11px 26px;font-size:.9rem}
 
 .trust-row{
@@ -145,9 +149,11 @@ p.sec-sub{
   margin-top:18px;
   justify-content:flex-end;
   width:100%;
+  direction:ltr;
 }
 .hero .trust-row .ti{
   color:rgba(255,255,255,.86);
+  flex-direction:row;
 }
 .hero .trust-row .ti b{
   background:#b4dc02;
@@ -539,7 +545,7 @@ p.sec-sub{
   position:relative;
   overflow:hidden;
   width:100%;
-  max-width:300px;
+  max-width:480px;
   display:block;
   text-align:center;
 }
@@ -1378,7 +1384,7 @@ p.sec-sub{
    7. FINAL CTA
 ═══════════════════════════════ */
 .final-section{
-  background:linear-gradient(135deg,rgba(10,25,41,.75) 0%,rgba(10,58,110,.75) 100%),url('https://res.cloudinary.com/dl296lrkq/image/upload/v1779396442/hero_vrogxy.jpg') center/cover no-repeat;
+  background:linear-gradient(135deg,rgba(10,25,41,.75) 0%,rgba(10,58,110,.75) 100%),url('https://res.cloudinary.com/dl296lrkq/image/upload/v1780591312/ChatGPT_Image_Jun_4_2026_05_40_28_PM_ioneuh.webp') center/cover no-repeat;
   padding:80px 24px;text-align:center;
   position:relative;overflow:hidden;
   content-visibility:auto;
@@ -1790,7 +1796,7 @@ footer p{
 ═══════════════════════════════════════════ -->
 <section class="hero">
   <img
-    src="https://res.cloudinary.com/dl296lrkq/image/upload/v1779308612/Create_a_premium_website_hero_202605202121_nyj4ja.jpg"
+    src="https://res.cloudinary.com/dl296lrkq/image/upload/v1780591090/ChatGPT_Image_Jun_4_2026_04_59_04_PM_qjkpwa.webp"
     alt="hero background"
     class="hero-video"
     style="object-fit:cover;width:100%;height:100%;position:absolute;inset:0;z-index:0;pointer-events:none;filter:saturate(1.05) brightness(.45);"
@@ -1803,7 +1809,7 @@ footer p{
 
   <div class="hero-bottom-block">
     <h1 class="rv">
-      <span class="hero-line">كتوظّف <em>فـ المطاعم والفنادق</em></span>
+      <span class="hero-line">كتوظّف <em>فـالمطاعم والفنادق</em></span>
       <span class="hero-line">وكتضيع وقتك مع <em>CVs</em></span>
       <span class="hero-line">ما كيوصلوش حتى للمقابلة</span>
     </h1>
@@ -1825,13 +1831,13 @@ footer p{
     </div>
 
     <div class="rv">
-      <a href="https://coincarriere.com/register?type=company" class="btn">جرّب المنصة الآن</a>
+      <a href="https://coincarriere.com/register?type=company" class="btn" style="min-width:340px;text-align:center;display:inline-block;">جرّب المنصة الآن</a>
     </div>
 
-    <div class="trust-row rv" style="justify-content:flex-start;width:100%;direction:rtl;gap:22px;">
-      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>بلا تعقيد</span>
-      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>ربح الوقت</span>
-      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>توظيف أكثر فعالية</span>
+    <div class="trust-row rv" style="justify-content:flex-end;width:100%;direction:ltr;gap:22px;">
+      <span class="ti" style="flex-direction:row;gap:6px;"><b></b>بلا تعقيد</span>
+      <span class="ti" style="flex-direction:row;gap:6px;"><b></b>ربح الوقت</span>
+      <span class="ti" style="flex-direction:row;gap:6px;"><b></b>توظيف أكثر فعالية</span>
     </div>
   </div>
 </section>
