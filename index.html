@@ -1807,7 +1807,10 @@ footer p{
   />
 
   <!-- Badge positioned relative to the hero section, not the container -->
-  <div class="hero-badge rv" style="position:absolute;top:36px;left:50%;transform:translateX(-50%);z-index:10;white-space:nowrap;margin-bottom:0;"><span></span>أول منصة توظيف متخصصة فالمطاعم والفنادق فالمغرب</div>
+  <!-- Logo top-left -->
+  <div id="hero-logo" style="position:fixed;top:24px;left:32px;z-index:999;background:rgba(255,255,255,0.12);backdrop-filter:blur(6px);border-radius:12px;padding:8px 14px;transition:opacity .4s;">
+    <img src="https://res.cloudinary.com/dl296lrkq/image/upload/v1777291285/1762829178875-w23oav1d4pb_wgqrdo.png" alt="CoinCarrière" style="height:72px;width:auto;display:block;"/>
+  </div>
 
   <div class="container"></div>
 
@@ -1866,12 +1869,6 @@ footer p{
       fetchpriority="high"
       decoding="sync"
     />
-    <div class="hero-badge-wrap">
-      <div class="hero-badge">
-        <span></span>
-        أول منصة توظيف متخصصة فالمطاعم والفنادق فالمغرب
-      </div>
-    </div>
   </div>
 
   <!-- الجزء السفلي: العنوان + النص + الزر + trust -->
@@ -2888,6 +2885,18 @@ function resetContactForm() {
   }
   window.addEventListener('scroll', updateBar, {passive:true});
   window.addEventListener('resize', updateBar, {passive:true});
+
+  // ── Logo hide after hero ───────────────────────
+  const heroLogo = document.getElementById("hero-logo");
+  const heroEl   = document.querySelector(".hero");
+  function updateLogo(){
+    if(!heroLogo || !heroEl) return;
+    const bottom = heroEl.getBoundingClientRect().bottom;
+    heroLogo.style.opacity = bottom > 60 ? "1" : "0";
+    heroLogo.style.pointerEvents = bottom > 60 ? "auto" : "none";
+  }
+  window.addEventListener("scroll", updateLogo, {passive:true});
+  updateLogo();
 
   // ── Logos Marquee — JS driven, infinite loop ───────
   (function(){
