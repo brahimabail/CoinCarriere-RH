@@ -153,7 +153,7 @@ p.sec-sub{
 }
 .hero .trust-row .ti{
   color:rgba(255,255,255,.86);
-  flex-direction:row;
+  flex-direction:row-reverse;
 }
 .hero .trust-row .ti b{
   background:#b4dc02;
@@ -1757,7 +1757,24 @@ footer p{
   .benefit-card p{font-size:0.8rem}
   .testi-grid{grid-template-columns:1fr}
   .final-section{
-    padding:50px 18px;
+    padding:0;
+    min-height:100svh;
+    align-items:stretch;
+  }
+  .final-section .final-inner{
+    min-height:100svh;
+    justify-content:space-between !important;
+    padding:0;
+  }
+  .final-section .final-top{
+    padding:30vh 22px 24px;
+    background:linear-gradient(180deg,rgba(10,25,41,.72) 0%,rgba(10,25,41,.0) 100%);
+    width:100%;
+  }
+  .final-section .final-bottom{
+    padding:24px 22px 20vh;
+    background:linear-gradient(0deg,rgba(10,25,41,.82) 0%,rgba(10,25,41,.0) 100%);
+    width:100%;
   }
   .final-section h2{
     font-size:1.55rem;
@@ -1765,7 +1782,7 @@ footer p{
   }
   .final-sub{
     font-size:0.92rem;
-    margin-bottom:22px;
+    margin-bottom:0;
   }
   #sticky-bar{flex-direction:column;gap:10px;padding:12px 14px}
   .s-text{font-size:0.85rem}
@@ -1816,7 +1833,7 @@ footer p{
 
   <div class="hero-bottom-block">
     <h1 class="rv">
-      <span class="hero-line">كتوظّف <em>فالمطاعم والفنادق</em></span>
+      <span class="hero-line">كتوظّف <em>فـالمطاعم والفنادق</em></span>
       <span class="hero-line">وكتضيع وقتك مع <em>CVs</em></span>
       <span class="hero-line">ما كيوصلوش حتى للمقابلة</span>
     </h1>
@@ -1842,9 +1859,9 @@ footer p{
     </div>
 
     <div class="trust-row rv" style="justify-content:flex-end;width:100%;direction:ltr;gap:22px;">
-      <span class="ti" style="flex-direction:row;gap:6px;"><b></b>بلا تعقيد</span>
-      <span class="ti" style="flex-direction:row;gap:6px;"><b></b>ربح الوقت</span>
-      <span class="ti" style="flex-direction:row;gap:6px;"><b></b>توظيف أكثر فعالية</span>
+      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>بلا تعقيد</span>
+      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>ربح الوقت</span>
+      <span class="ti" style="flex-direction:row-reverse;gap:6px;"><b></b>توظيف أكثر فعالية</span>
     </div>
   </div>
 </section>
@@ -2268,15 +2285,16 @@ function playDemoVideo(){
      7. FINAL CTA
 ═══════════════════════════════════════════ -->
 <section class="final-section" id="final-cta-section">
-  <div class="container center" style="position:relative;z-index:1;width:100%;">
-    <div class="rv">
+  <div class="final-inner" style="position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+    <div class="final-top rv">
       <h2>جرّب CoinCarrière وخلي التوظيف أكثر سرعة وتنظيم</h2>
       <p class="final-sub">
         انشر العرض ديالك، وصل للمرشحين المناسبين، وربح الوقت
         اللي كيضيع فالتوظيف التقليدي
       </p>
+    </div>
+    <div class="final-bottom rv">
       <a href="https://coincarriere.com/register?type=company"
-        
          class="btn" style="font-size:1.05rem;padding:16px 44px;">
         جرّب المنصة الآن
       </a>
